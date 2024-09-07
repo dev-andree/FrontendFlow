@@ -1,5 +1,6 @@
 import 'package:app_mobile/src/autenticacao/components/campo_texto_customizado.dart';
-import 'package:app_mobile/src/cadastro/cadastro_screen.dart';  // Importar a tela de cadastro
+import 'package:app_mobile/src/base/base_screen.dart';
+import 'package:app_mobile/src/cadastro/cadastro_screen.dart'; // Importar a tela de cadastro
 import 'package:app_mobile/src/configuracao/cores_customizadas.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +36,7 @@ class LoginScreen extends StatelessWidget {
                         style: TextStyle(
                             color: CoresCustomizadas.corConstrasteCustomizada)),
                   ])),
-                  Text('\'Where vision meets code\''),
+                  const Text('\'Where vision meets code\''),
                 ],
               )),
               Container(
@@ -62,23 +63,29 @@ class LoginScreen extends StatelessWidget {
                       icon: Icons.lock,
                       isSecret: true,
                     ),
-          
+
                     //Botão Entrar
                     SizedBox(
                       height: 50,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: CoresCustomizadas.corAppCustomizada,
+                            backgroundColor:
+                                CoresCustomizadas.corAppCustomizada,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(18))),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context)
+                              .pushReplacement(MaterialPageRoute(builder: (c) {
+                            return BaseScreen();
+                          }));
+                        },
                         child: const Text(
                           'Join the Network',
                           style: TextStyle(color: Colors.white, fontSize: 20),
                         ),
                       ),
                     ),
-          
+
                     //Link Esqueceu a Senha
                     Align(
                       alignment: Alignment.centerRight,
@@ -87,13 +94,14 @@ class LoginScreen extends StatelessWidget {
                         child: Text(
                           'Recover Your Key',
                           style: TextStyle(
-                              color: CoresCustomizadas.corConstrasteCustomizada),
+                              color:
+                                  CoresCustomizadas.corConstrasteCustomizada),
                         ),
                       ),
                     ),
-          
+
                     // Divisor
-          
+
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Row(
@@ -117,7 +125,7 @@ class LoginScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-          
+
                     //Botão novo usuario
                     SizedBox(
                       height: 50,
