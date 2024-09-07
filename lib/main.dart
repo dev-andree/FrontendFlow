@@ -1,4 +1,4 @@
-import 'package:app_mobile/src/autenticacao/login_screen.dart';
+import 'package:app_mobile/src/pages/autenticacao/login_screen.dart';
 import 'package:app_mobile/src/configuracao/cores_customizadas.dart';
 import 'package:flutter/material.dart';
 
@@ -17,13 +17,13 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
           seedColor: CoresCustomizadas.corAppCustomizada,
         ),
-        useMaterial3: true,
-        scaffoldBackgroundColor: Colors.white.withOpacity(0.75),
+        useMaterial3: true, // Ativa o Material 3
+        scaffoldBackgroundColor: Colors.white.withOpacity(0.75), // Cor de fundo
         bottomAppBarTheme: BottomAppBarTheme(
-          color: CoresCustomizadas.corAppCustomizada,
+          color: CoresCustomizadas.corAppCustomizada, // Cor do BottomAppBar
         ),
       ),
-      home: const LoginScreen(),
+      home: const LoginScreen(), // Tela inicial do aplicativo
     );
   }
 }
